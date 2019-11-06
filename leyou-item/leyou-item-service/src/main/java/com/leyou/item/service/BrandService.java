@@ -53,4 +53,11 @@ public class BrandService {
         return new PageResult<>(pageInfo.getTotal(), pageInfo.getList());
     }
 
+    public void saveBrand(Brand brand, List<Long> cids) {
+        this.brandMapper.insert(brand);
+
+        cids.forEach(cid -> {
+            this.brandMapper.insertBrandAndCategory(cid,brand.getId());
+        });
+    }
 }

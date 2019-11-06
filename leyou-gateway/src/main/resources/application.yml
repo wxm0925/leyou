@@ -14,3 +14,4 @@ zuul:
   prefix: /api  #配置网关前缀，浏览器访问的时候在localhost后需要加上此前缀
   routes:
     item-service: /item/** # 商品微服务的映射路径  item-service(服务ID)  /item/**（映射路径）
+    upload-service: /
